@@ -1,45 +1,22 @@
-export default function showCharacter(root, data) {
-    let {name, status, species, gender} = data;
+import ElementUtils from './util/ElementUtils.js';
 
-    //Creo h1 con el nombre
-    let h1 = document.createElement('h3');
-    let nameObj = document.createTextNode(name);
-    h1.appendChild(nameObj);
+export default function processCharacterData(data) {
+    let {name, status, species, gender, image} = data;
+    let info = [status, species, gender];
 
-    //Creo elemento ul
-    let ul = document.createElement('ul');
-
-    //Creo li con status
-    let li = document.createElement('li');
-    let statusText = document.createTextNode(status);
-    li.appendChild(statusText);
-
-    ul.appendChild(li);
-
-    //Creo li con gender
-    li = document.createElement('li');
-    let genderText = document.createTextNode(gender);
-    li.appendChild(genderText);
-
-    ul.appendChild(li);
-
-    //Creo li con species
-    li = document.createElement('li');
-    let speciesText = document.createTextNode(species);
-    li.appendChild(speciesText);
+    let imageObj = ElementUtils.createImage(image);
+    let h1 = ElementUtils.createH1(name);
+    let ul = ElementUtils.createUl(info);
     
-    ul.appendChild(li);
-
-    //Creo contenedor con clase de col-4 para implemetar bootstrap
-    let characterContainer = document.createElement('div');
-    characterContainer.classList.add('col-4');
-    characterContainer.classList.add('py-3');
-
-
-    //Pongo info de character dentro del div con class="col-4"
+    
+    let characterContainer = ElementUtils.createDiv();
+    characterContainer.appendChild(imageObj);
     characterContainer.appendChild(h1);
     characterContainer.appendChild(ul);
+    characterContainer.classList.add('p-3', 'bg-white', 'rounded-3','shadow-sm');
+    
+    let column = ElementUtils.createColumn();
+    column.appendChild(characterContainer);
 
-    //Muestro todo en root
-    root.appendChild(characterContainer);
+    return column;
 }
