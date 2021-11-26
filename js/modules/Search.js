@@ -1,20 +1,24 @@
 import showData from './showData.js';
 
 export default class Search{
+
+    constructor(root){
+        this.root = root;
+    }
     
-    static all(name) {
+    all(name) {
 
         fetch('https://rickandmortyapi.com/api/character')
             .then(res => res.json())
             .then(data => {
                 root.innerHTML='';
-                showData(data, root);
+                showData(data, this.root);
             }
         );
         
     }
 
-    static byName(name) {
+    byName(name) {
 
         fetch(`https://rickandmortyapi.com/api/character/?name=${name}`)
             .then(res => {
@@ -28,7 +32,7 @@ export default class Search{
             })
             .then(data => {
                 root.innerHTML='';
-                showData(data, root);
+                showData(data, this.root);
             }
         );
     
