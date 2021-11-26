@@ -5,7 +5,7 @@ export default function processCharacterData(data) {
     let info = [status, species, gender];
 
     let imageObj = ElementUtils.createImage(image);
-    let h1 = ElementUtils.createH1(name);
+    let h1 = ElementUtils.createH3(name);
     let ul = ElementUtils.createUl(info);
     
     

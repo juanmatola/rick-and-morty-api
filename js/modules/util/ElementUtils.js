@@ -7,10 +7,11 @@ export default class ElementUtils {
         return image;
     }
     
-    static createH1(text) {
-        let h1 = document.createElement('h1');
-        h1.appendChild(document.createTextNode(text));
-        return h1;
+    static createH3(text) {
+        let h3 = document.createElement('h3');
+        h3.classList.add('my-2');
+        h3.appendChild(document.createTextNode(text));
+        return h3;
     }
     
     static createUl(itemsObject) {
