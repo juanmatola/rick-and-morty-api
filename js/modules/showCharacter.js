@@ -13,7 +13,7 @@ export default function processCharacterData(data) {
     characterContainer.appendChild(imageObj);
     characterContainer.appendChild(h1);
     characterContainer.appendChild(ul);
-    characterContainer.classList.add('p-3', 'bg-white', 'rounded-3','shadow-sm');
+    characterContainer.classList.add('p-3', 'bg-white', 'rounded-3','shadow');
     
     let column = ElementUtils.createColumn();
     column.appendChild(characterContainer);
