@@ -1,7 +1,10 @@
-import showData from './modules/showData.js';
+import Search from './modules/Search.js';
 
+let searchInput = document.getElementById('search');
 let root = document.getElementById('root');
-    
-fetch('https://rickandmortyapi.com/api/character')
-    .then(res => res.json())
-    .then(data => showData(data.results, root));
+
+Search.all();
+
+searchInput.addEventListener('input', (e) => {
+    Search.byName(e.target.value);
+});
