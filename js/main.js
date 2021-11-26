@@ -5,7 +5,7 @@ let root = document.getElementById('root');
 
 let search = new Search(root);
 
-search.all();
+search.byName('');
 
 searchInput.addEventListener('input', (e) => {
     search.byName(e.target.value);

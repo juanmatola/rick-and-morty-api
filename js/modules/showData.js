@@ -11,9 +11,9 @@ export default function showData(data, root) {
         }
 
     }else{
-
-        root.appendChild(ElementUtils.createDiv().appendChild(ElementUtils.createH3("Not found")));
-        
+        let notFoundText = ElementUtils.createH3("Not found");
+        notFoundText.classList.add('text-center');
+        root.appendChild(notFoundText);
     }
 
 }
