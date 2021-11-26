@@ -2,7 +2,7 @@ export default function showCharacter(root, data) {
     let {name, status, species, gender} = data;
 
     //Creo h1 con el nombre
-    let h1 = document.createElement('h1');
+    let h1 = document.createElement('h3');
     let nameObj = document.createTextNode(name);
     h1.appendChild(nameObj);
 
